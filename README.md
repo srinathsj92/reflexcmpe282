@@ -1,5 +1,5 @@
 # reflexcmpe282
-CMPE 282 Project
+CMPE 282 TERM Project
 
 
 ### Testing Jenkins Build
