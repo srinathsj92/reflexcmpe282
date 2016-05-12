@@ -1,0 +1,24 @@
+{
+  "protocol":"http",
+  "portNumber": 6543,
+  "mySqlURL": "mysql-295b-ncalifornia.ceo9kcyisxyy.us-west-1.rds.amazonaws.com",
+  "mySqlUser": "rdsmysql295b",
+  "mySqlPort": 4396,
+  "mySqlPassword":"Welcome$jsu",
+  "mySqlDatabase":"mysql295bdb",
+  "appClientId": "sjsu_cloud_0.1",
+  "ldapAddress": "LDAP://sjsu.com",
+  "contextRoot" : "/sjsu/",
+  "useBuild": false,
+  "applicationVersion":"",
+  "environment":"dev",
+  "authentication": {
+    "secretKey": "TOP*SECRET!KEY",
+    "authorizedClients": [
+      {
+        "id": "browser",
+        "secret": "sjsu*app"
+      }
+    ]
+  }
+}
