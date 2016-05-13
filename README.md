@@ -1,8 +1,8 @@
 # reflexcmpe282
-CMPE 282 Project
+CMPE 282 TERM Project
 
 
-### Testing Jenkins Build
+# Testing Jenkins GitHub Integration 
 
->Trying to see if this works
->Trying githook
+Jenkins build is kicked off when there is a git commit in GitHub
+For Demo
