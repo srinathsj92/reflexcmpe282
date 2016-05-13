@@ -33,6 +33,7 @@ export class CustomersComponent implements OnInit {
 
     this.dataService.getCustomers()
         .subscribe((customers: ICustomer[]) => {
+            console.log("Customer Component - Customer Data ", customers);
           this.customers = this.filteredCustomers = customers;
         });
 

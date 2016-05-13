@@ -21,6 +21,9 @@ export class CustomerDetailsComponent implements OnActivate {
   routerOnActivate(current: RouteSegment, prev?: RouteSegment,
       currTree?: RouteTree, prevTree?: RouteTree) {
       const id = +currTree.parent(current).getParam('id');
+
+      console.log("Getting data for user with ID = ", id);
+
       this.dataService.getCustomer(id)
           .subscribe((customer: ICustomer) => this.customer = customer);
   }

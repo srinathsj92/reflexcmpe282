@@ -1,19 +1,19 @@
 <div *ngIf="customer">
   <div class="row">
     <div class="col-md-1">
-      <img src="images/{{customer.gender | lowercase}}.png" class="card-image" />
+      <img src="images/male.png" class="card-image" />
     </div>
     <div class="col-md-11">
       <h4>    
-          {{ customer.firstName | capitalize }} {{ customer.lastName | capitalize }}&nbsp;          
+          {{ customer.customerName | capitalize }} &nbsp;
       </h4>
       <br />
-      {{ customer.address }}
+      {{ customer.addressLine1 }}
       <br />
-      {{ customer.city }}, {{ customer.state.name }}
+      {{ customer.city }}, {{ customer.state }}
     </div>
   </div>    
 </div>   
 <div *ngIf="!customer" class="row">
-   No customer found
+   No customer found for ID = {{ id }}
 </div>  

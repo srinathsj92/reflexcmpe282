@@ -1,10 +1,14 @@
+{{
+orderItem
+}}
 <div class="row" *ngIf="customer">
     <h4>Orders for {{ customer.firstName | capitalize }} {{ customer.lastName | capitalize }}</h4>
     <br />
     <table class="table table-striped table-hover orders-table" *ngFor="let order of filteredOrders;trackBy:orderTrackBy">
-        <tr *ngFor="let orderItem of order.orderItems;trackBy:orderItemTrackBy">
-            <td>{{orderItem.productName}}</td>
-            <td>${{orderItem.itemCost}}</td>    
+        <tr *ngFor="let orderItem of filteredOrders;trackBy:orderItemTrackBy">
+            <td>{{orderItem.orderNumber}}</td>
+            <td>{{orderItem.orderDate}}</td>
+            <td>{{orderItem.status}}</td>
         </tr>
     </table>
 </div>

@@ -3,6 +3,7 @@ import { ROUTER_DIRECTIVES, Routes, Router } from '@angular/router';
 
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerComponent } from './+customer/customer.component';
+import { LoginComponent } from "login/login.component";
 import { APP_PROVIDERS } from './app.providers';
 
 @Component({ 
@@ -14,6 +15,7 @@ import { APP_PROVIDERS } from './app.providers';
 })
 @Routes([
   { path: '/', component: CustomersComponent },
+  //{ path: '/login', component: LoginComponent },
   { path: '/customer/:id', component: CustomerComponent },
   { path: '*', component: CustomerComponent }
 ])

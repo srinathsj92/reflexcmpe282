@@ -26,19 +26,6 @@ OrderServ.prototype = {
             uri: uri
         };
 
-        //console.log(uri);
-
-        //request(requestOptions, function (err, res, body) {
-        //    if (!err && res.statusCode == 200) {
-        //        //console.log('Response: ' + body);
-        //        deferred.resolve(body);
-        //    }
-        //    else {
-        //        //console.log('Err: ' + err);
-        //        deferred.reject(err);
-        //    }
-        //});
-
 
         var connection = mysql.createConnection({
           host     : this.url,
@@ -64,6 +51,7 @@ OrderServ.prototype = {
 
         return deferred.promise;
     }
+
 
 
 };

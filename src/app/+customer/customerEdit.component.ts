@@ -11,7 +11,7 @@ import { ICustomer, IState } from '../shared/interfaces';
 })
 export class CustomerEditComponent implements OnActivate {
 
-  customer: ICustomer = 
+  customer: ICustomer =
   {
     id: 0,
     firstName: '',

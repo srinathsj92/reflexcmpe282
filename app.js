@@ -19,17 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 console.log(basePath + assetsPath);
 
-app.use(webSetting.contextRoot, express.static(basePath + assetsPath));
-//
-//console.log("Result of path resolve : " + path.resolve(basePath,assetsPath,"index.html"));
-//
-//var renderIndex = function(req,res){
-//    res.sendFile(path.resolve(basePath,assetsPath,"index.html"));
-//};
-//
-//
-//app.get("/*",renderIndex);
-
+app.use(webSetting.contextRoot, express.static(basePath+assetsPath));
 
 // App Level Routes
 ////////////////////////////////////////////////////////////////////////////
@@ -44,11 +34,6 @@ app.get("/echo", function(req, res) {
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
-app.post('/profile',function (req, res, next) {
-  console.log(req.body);
-  res.json(req.body);
-});
 
 
 // Middleware

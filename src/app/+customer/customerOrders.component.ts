@@ -25,6 +25,7 @@ export class CustomerOrdersComponent implements OnActivate {
       prevTree?: RouteTree) {
       const id = +currTree.parent(current).getParam('id');
       this.dataService.getOrders(id).subscribe((orders: IOrder[]) => {
+          console.log("Customer Order Component : Order Detail :", orders);
         this.filteredOrders = orders;
       });
       this.dataService.getCustomer(id).subscribe((customer: ICustomer) => {

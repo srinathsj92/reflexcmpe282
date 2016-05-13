@@ -8,7 +8,7 @@
   "mySqlDatabase":"mysql295bdb",
   "appClientId": "sjsu_cloud_0.1",
   "ldapAddress": "LDAP://sjsu.com",
-  "contextRoot" : "/sjsu/",
+  "contextRoot" : "/",
   "useBuild": false,
   "applicationVersion":"",
   "environment":"dev",

@@ -35,11 +35,25 @@ module.exports = function(app,router,webSetting){
 
     });
 
-
-
     router.get("/customer/:customerID/orders", function(req,res,next) {
 
         orderServ.getOrderByCustomer(req.params.customerID)
+            .then(function(result){
+
+                res.json(result);
+            })
+            .catch(function(err){
+                next(err);
+            });
+
+    });
+
+    router.post("/customer", function(req,res,next) {
+
+        console.log("POST : /customer with body :", req.body);
+        console.log("Calling updateCustomer()...");
+
+        customerServ.updateCustomer(req)
             .then(function(result){
 
                 res.json(result);

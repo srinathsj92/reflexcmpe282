@@ -20,11 +20,11 @@ export class DataService {
     
     getCustomers() : Observable<ICustomer[]> {
         if (!this.customers) {
-            return this.http.get(this._baseUrl + 'customers.json')
             //return this.http.get(this._baseUrl + 'customers.json')
+            return this.http.get("/sjsu/api/customer")
                         .map((res: Response) => {
                             this.customers = res.json();
-                            return this.customers;
+                            return  this.customers;// JSON.parse(res.json());
                         })
                         .catch(this.handleError);
         }
@@ -53,10 +53,18 @@ export class DataService {
     }
 
     getOrders(id: number) : Observable<IOrder[]> {
-      return this.http.get(this._baseUrl + 'orders.json')
+
+        console.log("In getOrders() function with ID = ",id);
+
+      //return this.http.get(this._baseUrl + 'orders.json')
+        let URL = ["/sjsu/api/customer",id,"orders"].join("/");
+        console.log("In getOrders() : URL = ",URL);
+        return this.http.get(URL)
                 .map((res: Response) => {
                     this.orders = res.json();
-                    return this.orders.filter((order: IOrder) => order.customerId === id);
+                   // return this.orders.filter((order: IOrder) => order.customerId === id);
+                    console.log("In getOrders() : Order Response = ",this.orders);
+                    return this.orders;
                 })
                 .catch(this.handleError);               
     }
@@ -69,7 +77,7 @@ export class DataService {
                    customer.state.abbreviation = state.abbreviation;
                    customer.state.name = state.name;
                    this.customers[index] = customer;
-               } 
+               }
             });
             observer.next(true);
             observer.complete();
@@ -96,7 +104,12 @@ export class DataService {
     }
     
     private filterCustomers(id: number) : ICustomer {
-        const custs = this.customers.filter((cust) => cust.id === id);
+        console.log("Filter Customers",id);
+        const custs = this.customers.filter((cust) =>{
+
+            //console.log("Matching ",cust.customerNumber ," to ", id);
+            return cust.customerNumber === id;
+        });
         return (custs.length) ? custs[0] : null;
     }
     
