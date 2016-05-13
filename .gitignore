@@ -50,11 +50,10 @@ npm-debug.log
 /__build__/**
 /public/dist/
 /src/*/dist/
-/src/app/**/*.js
-/src/app/**/*.js.map
 /src/platform/**/*.js
 /src/platform/**/*.js.map
-/src/*.js
+!/src/systemjs.config.js
+!/src/app/main.js
 /src/*.js.map
 /dist/**
 .webpack.json
