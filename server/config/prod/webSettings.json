@@ -1,8 +1,7 @@
 {
   "port": ":8383",
-  "wnwUrl": "watchtower-dev-5-5997.ccg21.dev.paypalcorp.com",
   "appClientId": "wnw_0.1",
-  "ldapAddress": "LDAP://paypal.com",
+  "ldapAddress": "LDAP://sjsu.com",
   "contextRoot" : "/wnw/",
   "useBuild": false,
   "applicationVersion":"",
